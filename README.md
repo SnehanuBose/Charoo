@@ -4,7 +4,7 @@ Charoo is a simple real‑time group chat application built with **Spring Boot**
 
 It is designed as a small but complete example of building a real‑time feature end‑to‑end (backend + frontend) using STOMP over WebSocket.
 
----
+
 
 ## Features
 
@@ -14,14 +14,14 @@ It is designed as a small but complete example of building a real‑time feature
 - Simple, responsive UI (no frontend framework)  
 - No database or login (lightweight, demo‑friendly)
 
----
+
 
 ## Tech Stack
 
 - **Backend:** Java 17, Spring Boot (Web MVC + WebSocket), Lombok  
 - **Frontend:** HTML, CSS, vanilla JavaScript, SockJS, stomp.js  
 
----
+
 
 ## Architecture (Quick Overview)
 
@@ -67,22 +67,8 @@ http://localhost:8080
 
 Open it in multiple tabs/browsers to chat between users.
 
----
 
-## Project Structure
 
-```text
-src/main/java/com/example/charoo
- ├─ CharooApplication.java        # Spring Boot entry
- ├─ chat/                         # Chat controller + message model
- └─ config/                       # WebSocket/STOMP configuration & events
-src/main/resources/static         # HTML, CSS, JS frontend
-```
+### 🤝 Contributions are welcome.
 
----
 
-## What This Project Demonstrates
-
-- Setting up WebSockets and STOMP messaging in a Spring Boot application.  
-- Building a small real‑time feature with a clean separation between backend and frontend.  
-- Using a simple in‑memory broker to broadcast messages to all connected clients.
