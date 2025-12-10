@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Charoo</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- USERNAME SCREEN -->
+<main id="username-page" class="page page--centered" aria-hidden="false">
+    <section class="card username-card">
+        <h1 class="title">What should we call you?</h1>
+
+        <form id="usernameForm" class="form" autocomplete="off" novalidate>
+            <label class="visually-hidden" for="name">Username</label>
+            <input id="name" class="input input--large" type="text" placeholder="Enter a username" required />
+
+            <div class="actions">
+                <button type="submit" class="btn btn--accent username-submit">Start Chatting</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+
+<!-- CHAT SCREEN -->
+<main id="chat-page" class="page hidden" aria-hidden="true">
+    <section class="chat-wrap">
+
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="brand">
+                <h2 class="brand__title">CHAROO</h2>
+            </div>
+            <div class="status connecting">Connecting...</div>
+        </header>
+
+        <!-- Messages -->
+        <div class="chat-body">
+            <ul id="messageArea" class="messages" role="list" aria-live="polite"></ul>
+        </div>
+
+        <!-- Composer -->
+        <form id="messageForm" class="composer" autocomplete="off">
+
+            <div class="composer-inner">
+                <label class="visually-hidden" for="message">Message</label>
+                <input id="message" class="input input--flex" type="text" placeholder="Type a message..." />
+                <button type="submit" class="btn btn--primary">Send</button>
+            </div>
+
+        </form>
+
+    </section>
+</main>
+
+
+<!-- STOMP + SockJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+<!-- App -->
+<script src="/js/app.js"></script>
+</body>
+</html>
