@@ -1,74 +1,74 @@
-# Charoo
+# 🚀 Charoo — Real‑Time Group Chat 🚀
 
-Charoo is a simple real‑time group chat application built with **Spring Boot**, **WebSockets**, and a minimal **HTML/JS** frontend.
+**Charoo** is a sleek, lightweight, real‑time group chat application built with modern technologies.  
+It demonstrates how to create an **end‑to‑end real‑time system** using **Spring Boot**, **WebSockets (STOMP)**, and a minimal **HTML/CSS/JS frontend**.
 
-It is designed as a small but complete example of building a real‑time feature end‑to‑end (backend + frontend) using STOMP over WebSocket.
-
-
-
-## Features
-
-- Join a public chat room with a username  
-- Real‑time messaging over WebSocket/STOMP  
-- Join / leave notifications  
-- Simple, responsive UI (no frontend framework)  
-- No database or login (lightweight, demo‑friendly)
-
-
-
-## Tech Stack
-
-- **Backend:** Java 17, Spring Boot (Web MVC + WebSocket), Lombok  
-- **Frontend:** HTML, CSS, vanilla JavaScript, SockJS, stomp.js  
-
-
-
-## Architecture (Quick Overview)
-
-- WebSocket endpoint exposed at `/ws` via Spring's `@EnableWebSocketMessageBroker` configuration.  
-- Clients send STOMP messages to `/app/chat/*`, handled by `ChatController` methods annotated with `@MessageMapping`.  
-- An in‑memory simple broker broadcasts messages to `/topic/public`, where all clients are subscribed.  
-- A `WebSocketEventListener` listens for disconnect events and publishes `LEAVE` messages so users see when someone leaves.
+Designed as a beginner‑friendly full‑stack project, Charoo is perfect for learning how to integrate real‑time communication with a server backbone — no heavy front‑end frameworks required!
 
 ---
 
-## Getting Started
+## 💡 Key Features
 
-### 1. Clone
+✨ **Real‑Time Messaging** — Instant message updates using STOMP over WebSockets  
+👥 **Public Group Chat** — Multiple users can chat together in one shared room  
+🔔 **Join/Leave Notifications** — Seamless user presence updates  
+🧠 **Lightweight & Simple** — No database or authentication needed — great for demos  
+📱 **Responsive UI** — Functional UI that looks good on desktop & mobile  
+
+---
+
+## 🧰 Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Backend | Java 17 |
+| Framework | Spring Boot |
+| Messaging | WebSockets + STOMP |
+| Frontend | HTML, CSS, JavaScript |
+| Libraries | SockJS, stomp.js |
+
+---
+
+## 🔧 Architecture Overview
+
+Charoo leverages Spring Boot’s WebSocket support to create a real‑time messaging backbone:
+
+- A WebSocket endpoint (`/ws`) enables STOMP connections.
+- Clients send chat messages to `/app/chat/sendMessage`.
+- Messages are broadcast to all connected users via a topic (`/topic/public`).
+- User connect/disconnect events are handled and broadcasted to update presence.
+
+---
+
+## 🚀 Getting Started
+
+### Clone the Repository
 
 ```bash
-git clone <your-repo-url>
-cd charoo
+git clone https://github.com/SnehanuBose/Charoo.git
+cd Charoo
 ```
 
-### 2. Run the app
-
-Using the Maven wrapper (included in the project):
-
-```bash
-# Linux / macOS
-./mvnw spring-boot:run
-
-# Windows
-mvnw.cmd spring-boot:run
-```
-
-Or with a global Maven installation:
+### Run the Application
 
 ```bash
 mvn spring-boot:run
 ```
 
-Then open:
+### Open in Browser
 
-```text
+```
 http://localhost:8080
 ```
 
-Open it in multiple tabs/browsers to chat between users.
+Open multiple tabs to chat in real time.
 
+---
 
+## 🛠 Contributing
 
-### 🤝 Contributions are welcome.
+Pull requests are welcome. For major changes, please open an issue first.
 
+---
 
+Happy Coding! 🚀
